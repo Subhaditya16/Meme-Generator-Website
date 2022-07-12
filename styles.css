@@ -1,0 +1,17 @@
+.heading h1 {
+  font-family: Impact, "Arial Narrow Bold", sans-serif;
+  font-size: 50px;
+}
+
+.heading {
+  text-align: center;
+  margin: auto;
+}
+
+body {
+  margin: 10%;
+}
+
+#meme-canvas {
+  width: 300px;
+}
