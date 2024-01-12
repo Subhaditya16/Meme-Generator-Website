@@ -63,35 +63,61 @@
         role="tabpanel"
         aria-labelledby="nav-home-tab"
       >
-        <div class="form-control">
-          <textarea id="top-text"></textarea>
-          Text size:
-          <input
-            type="range"
-            id="top-text-size-input"
-            min="0.05"
-            max="0.25"
-            value="0.15"
-            step="0.01"
-          />
-          <textarea id="bottom-text"></textarea>
-          Text size:
-          <input
-            type="range"
-            id="bottom-text-size-input"
-            min="0.05"
-            max="0.25"
-            value="0.15"
-            step="0.01"
-          />
+        <h3 style="text-align: center">
+          Explore your options and create a cool meme
+        </h3>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <div class="form-control">
+                <textarea id="top-text"></textarea>
+                Text size:
+                <input
+                  type="range"
+                  id="top-text-size-input"
+                  min="0.05"
+                  max="0.25"
+                  value="0.15"
+                  step="0.01"
+                />
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="form-control">
+                <textarea id="bottom-text"></textarea>
+                Text size:
+                <input
+                  type="range"
+                  id="bottom-text-size-input"
+                  min="0.05"
+                  max="0.25"
+                  value="0.15"
+                  step="0.01"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <div class="form-control">
+                <input type="file" id="image-input" accept="image/*" />
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="form-control">
+                <button id="generate-btn" type="button">Generate!</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <canvas
+                id="meme-canvas"
+                title="Right click to save this meme"
+              ></canvas>
+            </div>
+          </div>
         </div>
-        <div class="form-control">
-          <input type="file" id="image-input" accept="image/*" />
-        </div>
-        <div class="form-control">
-          <button id="generate-btn" type="button">Generate!</button>
-        </div>
-        <canvas id="meme-canvas" title="Right click to save this meme"></canvas>
       </div>
       <div
         class="tab-pane fade"
@@ -100,12 +126,13 @@
         aria-labelledby="nav-profile-tab"
       >
         <div>
-          <h3>Templates from Imgflip.com</h3>
-          <div id="templates" class="col-sm"></div>
+          <h3 style="text-align: center">Templates from Imgflip.com</h3>
+          <div class="container">
+            <div id="templates"></div>
+          </div>
         </div>
       </div>
     </div>
     <script src="js/script.js"></script>
   </body>
-  
 </html>

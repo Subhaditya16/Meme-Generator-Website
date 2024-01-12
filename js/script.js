@@ -91,24 +91,31 @@ function getTemplates() {
     .then((response) => response.json())
     .then((response) => {
       const { memes } = response.data;
-      let html = "";
+      let html = '<div class="container">'; // Start with a container
+
       for (var i = 0; i < memes.length; i++) {
-        let htmlSegment = `<div>
-                              <img src="${memes[i].url}" class="img-thumbnail" style="width: 300px;">
-                              <div class="media-body">
-                                <h5 class="mt-0 mb-1">${memes[i].name}</h5>
-                              </div>
-                            </div>`;
+        // Add a new row for every third element
+        if (i % 3 === 0) {
+          html += '</div><div class="row">';
+        }
+
+        let htmlSegment = `<div class="col mb-4">
+                          <div class="card" style="width: 18rem;">
+                            <img src="${memes[i].url}" class="card-img-top">
+                            <div class="card-body">
+                              <h5 class="mt-0 mb-1">${memes[i].name}</h5>
+                            </div>
+                          </div>
+                       </div>`;
         html += htmlSegment;
       }
+
+      html += "</div>"; // Close the last row
+      html += "</div>"; // Close the container
+
       let container = document.getElementById("templates");
       container.innerHTML = html;
     });
 }
-// for (let i = array.length - 1; i > 0; i--) {
-//   const j = Math.floor(Math.random() * i);
-//   const temp = array[i];
-//   array[i] = array[j];
-//   array[j] = temp;
-// }
+
 getTemplates();
